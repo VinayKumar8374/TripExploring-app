@@ -1,4 +1,3 @@
-/* Enterprise-style custom CSS */
 :root {
     --primary: #0a3d62;
     --primary-dark: #071f33;
@@ -15,7 +14,6 @@ body {
     scroll-behavior: smooth;
 }
 
-/* Hero Section */
 .hero {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: white;
@@ -34,7 +32,6 @@ body {
     opacity: 0.9;
 }
 
-/* Trip Cards */
 .trip-card {
     background: white;
     border: none;
@@ -106,7 +103,6 @@ body {
     font-size: 0.9rem;
 }
 
-/* Footer */
 footer {
     background-color: var(--primary-dark);
     color: white;
@@ -115,7 +111,6 @@ footer {
     text-align: center;
 }
 
-/* Scroll to top button */
 .scroll-top {
     position: fixed;
     bottom: 30px;
@@ -143,7 +138,6 @@ footer {
     background: var(--accent-hover);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2rem;
