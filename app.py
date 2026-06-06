@@ -1,13 +1,12 @@
 from flask import Flask, render_template
 import os
+import socket
 
 app = Flask(__name__)
 
-# Production configuration
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-production')
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'change-this-in-production')
 app.config['JSON_SORT_KEYS'] = False
 
-# Trip data: destination name, state, description, image URL (realistic high-quality images)
 trips = [
     {
         "name": "Taj Mahal, Agra",
@@ -97,11 +96,8 @@ def index():
 
 @app.route('/health')
 def health():
-    """Health check endpoint for production monitoring"""
-    return {"status": "healthy", "destinations": len(trips)}, 200
+    return {"status": "healthy", "destinations": len(trips), "server": socket.gethostname()}, 200
 
 if __name__ == '__main__':
-    # Get port from environment variable or default to 5000
     port = int(os.environ.get('PORT', 5000))
-    # Bind to all network interfaces (0.0.0.0) for production
     app.run(host='0.0.0.0', port=port, debug=False)
