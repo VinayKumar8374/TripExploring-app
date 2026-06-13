@@ -12,6 +12,74 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Additional image styles */
+        .dest-img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .img-gradient {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .img-gradient i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        .img-gradient h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .img-gradient p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+        
+        .destination-image {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            height: 260px;
+        }
+        
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            padding: 1rem;
+            color: white;
+        }
+        
+        .image-overlay h4 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .image-overlay p {
+            margin: 0;
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+    </style>
 </head>
 <body>
 
@@ -61,8 +129,9 @@
         <div class="col-lg-6 col-xl-4 col-md-6 destination-card" data-category="{{ trip.category }}">
             <div class="trip-card">
                 <div class="img-container">
-                    <img src="{{ trip.image_url }}" class="trip-img" alt="{{ trip.name }}" loading="lazy" 
-                         onerror="this.src='https://via.placeholder.com/800x600?text={{ trip.name | replace(' ', '+') }}'">
+                    <div class="destination-image" style="background-image: url('{{ trip.image_url }}'); background-size: cover; background-position: center; height: 260px;">
+                        <!-- Fallback gradient if image fails -->
+                    </div>
                     <span class="category-badge">{{ trip.category }}</span>
                 </div>
                 <div class="card-body">
@@ -168,7 +237,7 @@
         <hr class="my-3 bg-light">
         <div class="text-center small">
             <p class="mb-0">© 2026 India Heritage Explorer | Enterprise-Grade Inspiration Platform</p>
-            <p class="mb-0 mt-1 opacity-50">All images are for representational purposes and sourced from Wikimedia Commons</p>
+            <p class="mb-0 mt-1 opacity-50">Discover the beauty of India through our curated collection</p>
         </div>
     </div>
 </footer>
