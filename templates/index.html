@@ -35,9 +35,7 @@
         {% for trip in trips %}
         <div class="col-lg-6 col-xl-4 col-md-6">
             <div class="trip-card">
-                <div class="trip-img" style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); display: flex; align-items: center; justify-content: center; font-size: 5rem;">
-                    {{ trip.icon }}
-                </div>
+                <img src="{{ trip.image_url }}" class="trip-img" alt="{{ trip.name }}" loading="lazy">
                 <div class="card-body">
                     <h3 class="trip-title">{{ trip.name }}</h3>
                     <div class="trip-state">
