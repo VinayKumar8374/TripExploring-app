@@ -1,21 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>
+India Trip Explorer
+</title>
+
+
+<link rel="stylesheet"
+href="/static/css/style.css">
+
+
+<link href=
+"https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+rel="stylesheet">
+
+
+</head>
+
+
+
+<body>
+
+
+<header>
+
+
+<div class="hero">
+
+
+<h1>
+Explore Incredible India
+</h1>
+
+
+<p>
+Discover India's most beautiful destinations
+</p>
+
+
+<a href="#destinations">
+Explore Places
+</a>
+
+
+</div>
+
+
+</header>
+
+
+
+
+
+<section class="intro">
+
+
+<h2>
+Travel Beyond Ordinary
+</h2>
+
+
+<p>
+Explore mountains, beaches, heritage cities,
+spiritual locations and natural wonders.
+</p>
+
+
+</section>
+
+
+
+
+
+
 <section id="destinations">
 
 
 <h2 class="heading">
+
 Popular Indian Destinations
+
 </h2>
+
+
+
 
 
 <div class="destination-grid">
 
 
+
 {% for place in destinations %}
+
+
 
 
 <div class="card">
 
 
 <img src="{{place.image}}">
+
 
 
 <div class="content">
@@ -31,9 +118,11 @@ Popular Indian Destinations
 </h4>
 
 
+
 <span>
 {{place.category}}
 </span>
+
 
 
 <p>
@@ -41,22 +130,31 @@ Popular Indian Destinations
 </p>
 
 
+
+
 <h3>
 Top Attractions
 </h3>
 
 
+
 <ul>
 
+
 {% for item in place.places %}
+
 
 <li>
 {{item}}
 </li>
 
+
 {% endfor %}
 
+
 </ul>
+
+
 
 
 <h3>
@@ -64,21 +162,65 @@ Best Time To Visit
 </h3>
 
 
+
 <p>
 {{place.best_time}}
 </p>
 
 
+
 </div>
 
 
 </div>
+
+
 
 
 {% endfor %}
+
 
 
 </div>
 
 
 </section>
+
+
+
+
+
+
+<section class="footer-section">
+
+
+<h2>
+Start Your Exploration
+</h2>
+
+
+<p>
+Discover India's culture, history and landscapes.
+</p>
+
+
+</section>
+
+
+
+
+
+<footer>
+
+<p>
+© 2026 India Trip Explorer
+</p>
+
+</footer>
+
+
+
+</body>
+
+
+</html>
